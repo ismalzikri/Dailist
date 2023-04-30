@@ -1,0 +1,26 @@
+/* wrapper bottom navigation start  */
+
+.wrapper__bottom-navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper__bottom-navigation__icon {
+  color: #7ed3d9;
+  font-weight: 600;
+  font-size: 35px;
+  user-select: none;
+}
+
+/* end wrapper bottom navigation */
