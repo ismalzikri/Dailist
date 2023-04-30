@@ -13,9 +13,10 @@
 
 .wrapper__title {
   font-size: 20px;
-  color: white;
+  color: black;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0.5rem;
 }
 
 /*  wrapper upcoming start */
@@ -27,7 +28,7 @@
 }
 
 .wrapper__upcoming__title {
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
@@ -51,7 +52,7 @@
 }
 
 .wrapper__finished__top__title {
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;

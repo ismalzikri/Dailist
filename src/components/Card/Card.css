@@ -1,5 +1,5 @@
 /*  wrapper upcoming start */
-.wrapper__upcoming__item {
+.wrapper__upcoming__items li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,11 @@
 
 
 /*  wrapper finished start */
-.wrapper__finished__item {
+.wrapper__finished__items {
+  list-style: none;
+}
+
+.wrapper__finished__items li {
   margin-top: 10px;
   margin-bottom: 15px;
   border: 1px solid #56bdc4;
@@ -28,7 +32,7 @@
   padding: 16px;
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color: black;
   text-decoration: line-through;
   text-transform: capitalize;
 }

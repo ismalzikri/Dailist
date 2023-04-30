@@ -1,13 +1,13 @@
 import "./Button.css";
 
 type ButtonProps = {
-  onOpenModal: () => void;
+  onClick: () => void;
 };
 
-export function Button({ onOpenModal }: ButtonProps) {
+export function Button({ onClick }: ButtonProps) {
   return (
-    <div className="wrapper__bottom-navigation" onClick={onOpenModal}>
+    <button className="wrapper__bottom-navigation__button" onClick={onClick}>
       <span className="wrapper__bottom-navigation__icon">+</span>
-    </div>
+    </button>
   );
 }
