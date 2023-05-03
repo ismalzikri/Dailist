@@ -11,6 +11,7 @@
 }
 
 .modal {
+    position: relative;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -30,24 +31,33 @@
 }
 
 .modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
+    text-align: right;
     margin-top: 10px;
 }
 
 .modal-buttons button {
-    padding: 5px 10px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
     margin-left: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #7ed3d9;
     cursor: pointer;
 }
 
-.modal-buttons button:last-child {
-    margin-left: 0;
-    background-color: #ccc;
+.modal__close-button {
+    position: absolute;
+    right: -16px;
+    top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 10px 60px #ccc;
 }

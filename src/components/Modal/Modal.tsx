@@ -1,4 +1,5 @@
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler } from "react";
+import closeIcon from "../../assets/close-icon.svg";
 import "./Modal.css";
 
 type ModalProps = {
@@ -6,21 +7,22 @@ type ModalProps = {
   onClose: () => void;
 };
 
-// TODO: Use Dialog component from Radix UI
 export function Modal({ handleSubmitTodo, onClose }: ModalProps) {
-  // 1. controlled with state = state input is handled manually ⭐
-  // 2. uncontrolled without state = get form field values from FormData ⭐⭐⭐
   return (
-    <div className="modal-overlay">
-      <div className="modal">
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h3>What you gonna do?</h3>
+        <div className="modal__close-button" onClick={onClose}>
+          <img src={closeIcon} alt="close-icon" />
+        </div>
         <form id="todo-form" onSubmit={handleSubmitTodo}>
-          <input name="title" type="text" placeholder="Playing guitar or somethin.."
+          <input
+            name="title"
+            type="text"
+            placeholder="Playing guitar or something.."
           />
-          <textarea name="description" rows={5} />
           <div className="modal-buttons">
             <button type="submit">Add</button>
-            <button onClick={onClose}>Cancel</button>
           </div>
         </form>
       </div>
