@@ -27,6 +27,7 @@ function App() {
       finished: false,
     };
     setTodoItems([...todoItems, newTodo]);
+    setIsModalOpen(!isModalOpen);
   };
 
   // TODO: Logic for finishing upcoming todos

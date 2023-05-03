@@ -20,6 +20,7 @@ export function Modal({ handleSubmitTodo, onClose }: ModalProps) {
             name="title"
             type="text"
             placeholder="Playing guitar or something.."
+            required
           />
           <div className="modal-buttons">
             <button type="submit">Add</button>
