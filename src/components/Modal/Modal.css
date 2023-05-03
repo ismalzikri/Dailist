@@ -48,8 +48,8 @@
 
 .modal__close-button {
     position: absolute;
-    right: -16px;
-    top: -20px;
+    right: -14px;
+    top: -16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,4 +60,12 @@
     border-radius: 50%;
     background: #fff;
     box-shadow: 0 10px 60px #ccc;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 500px) {
+    .modal {
+        width: 375px;
+    }
 }
