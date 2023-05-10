@@ -26,8 +26,13 @@
     font-size: 14px;
     margin-top: 5px;
     margin-bottom: 5px;
+    outline: none;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.modal input[type='text']:focus {
+    border-color: #7ed3d9;
 }
 
 .modal-buttons {

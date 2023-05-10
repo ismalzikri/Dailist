@@ -21,6 +21,7 @@ export function Modal({ handleSubmitTodo, onClose }: ModalProps) {
             type="text"
             placeholder="Playing guitar or something.."
             required
+            autoFocus
           />
           <div className="modal-buttons">
             <button type="submit">Add</button>
