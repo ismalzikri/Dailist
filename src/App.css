@@ -56,6 +56,15 @@
   cursor: pointer;
 }
 
+.wrapper__upcoming__items--input {
+  width: 85%;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 10px;
+  outline-color: #56bdc4;
+}
+
 /*  wrapper upcoming end */
 
 
