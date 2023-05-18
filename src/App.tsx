@@ -90,7 +90,6 @@ function App() {
                       {selectedItemIndex === index ? (
                         isEdit ? (
                           <input
-                            className="wrapper__upcoming__items--input"
                             type="text"
                             value={todoItem.title}
                             onChange={handleInputChange}
