@@ -55,6 +55,11 @@ function App() {
     setSelectedItemIndex(null);
   };
 
+  const handleInputShow = (index: number) => {
+    setSelectedItemIndex(index)
+    setIsEdit(!isEdit)
+  }
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (selectedItemIndex === null) return;
 
@@ -96,12 +101,12 @@ function App() {
                             onBlur={handleInputBlur}
                           />
                         ) : (
-                          <span onClick={() => setIsEdit(!isEdit)}>
+                          <span>
                             0{index + 1}. {todoItem.title}
                           </span>
                         )
                       ) : (
-                        <span onClick={() => setSelectedItemIndex(index)}>
+                        <span onClick={ () => handleInputShow(index)}>
                           0{index + 1}. {todoItem.title}
                         </span>
                       )}
