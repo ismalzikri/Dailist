@@ -1,17 +1,19 @@
 # Dailist
 
-an app to write what your's plan,
+An app to plan upcoming todos and finish your todos.
 
-list of feature:
+Access live: <https://dailist.ismalzikri.com>
 
-- add item
-- remove item
-- see list of your todo / plan
-- see list of done of your plan
+## Features
 
-# usage
+- Add item
+- Remove item
+- See list of your todo or plan
+- See list of done of your plan
 
-- don't forget to install pnpm
-- you can clone this repo
-- pnpm install
-- pnpm dev ( run on dev server )
+## Usage
+
+- Don't forget to install pnpm
+- You can clone this repo
+- `pnpm install`
+- `pnpm dev` (run on dev server)
