@@ -38,6 +38,7 @@
 
 /*  wrapper upcoming start */
 .wrapper__upcoming__items li {
+  height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
