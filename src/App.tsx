@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState} from "react";
 import { nanoid } from "nanoid";
 import { Button, EmptyPage, Modal } from "./components";
 import checklistIcon from "./assets/checklist.svg";
-import checkEditIcon from "./assets/check-mark-box-icon.svg";
 import "./App.css";
 
 type TodoItem = {
@@ -45,11 +44,21 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Perform your desired action here
+      handleEditTodoItem(event.currentTarget.value);
+    }
+  };
+
   const handleEditTodoItem = (newValue: string) => {
     if (selectedItemIndex === null) return;
 
     const updatedTodoItems = [...todoItems];
-    updatedTodoItems[selectedItemIndex].title = newValue;
+    updatedTodoItems[selectedItemIndex].title = newValue
     setTodoItems(updatedTodoItems);
     setIsEdit(false);
     setSelectedItemIndex(null);
@@ -74,7 +83,8 @@ function App() {
   };
 
   const handleDeleteAllCompleted = () => {
-    setTodoItems([]);
+    const filteredArr = todoItems.filter(item => !item.finished) 
+    setTodoItems(filteredArr)
   };
 
   return (
@@ -98,26 +108,22 @@ function App() {
                             type="text"
                             value={todoItem.title}
                             onChange={handleInputChange}
+                            onKeyDown={handleKeyDown}
                             onBlur={handleInputBlur}
+                            autoFocus
                           />
                         ) : (
                           <span>
-                            0{index + 1}. {todoItem.title}
+                            {todoItem.title}
                           </span>
                         )
                       ) : (
                         <span onClick={ () => handleInputShow(index)}>
-                          0{index + 1}. {todoItem.title}
+                          {todoItem.title}
                         </span>
                       )}
                       {selectedItemIndex === index && isEdit ? (
-                        <img
-                          width={24}
-                          height={24}
-                          src={checkEditIcon}
-                          alt="checklist-edit-icon"
-                          onClick={() => handleEditTodoItem(todoItem.title)}
-                        />
+                        ''
                       ) : (
                         <img
                           width={26}
@@ -149,7 +155,7 @@ function App() {
                   .map((todoItem, index) => (
                     <li key={todoItem.id}>
                       <span>
-                        0{index + 1}. {todoItem.title}
+                        {todoItem.title}
                       </span>
                     </li>
                   ))}
