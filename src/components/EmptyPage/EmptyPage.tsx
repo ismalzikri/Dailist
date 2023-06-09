@@ -1,10 +1,10 @@
-import iconEmpty from "../../assets/cute_ghost-removebg-preview.png";
+import iconEmpty from "../../assets/Todo-ilustration.png";
 
 export function EmptyPage() {
   return (
     <div
       style={{
-        marginTop: 100,
+        marginTop: 125,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

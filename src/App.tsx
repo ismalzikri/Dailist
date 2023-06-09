@@ -13,6 +13,7 @@ type TodoItem = {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false)
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
@@ -48,7 +49,6 @@ function App() {
     if (event.key === 'Enter') {
       // Prevent the default form submission behavior
       event.preventDefault();
-
       // Perform your desired action here
       handleEditTodoItem(event.currentTarget.value);
     }
@@ -58,6 +58,12 @@ function App() {
     if (selectedItemIndex === null) return;
 
     const updatedTodoItems = [...todoItems];
+
+    if (newValue === '') {
+      setIsError(true)
+      return
+    } 
+
     updatedTodoItems[selectedItemIndex].title = newValue
     setTodoItems(updatedTodoItems);
     setIsEdit(false);
@@ -77,7 +83,14 @@ function App() {
     setTodoItems(updatedTodoItems);
   };
 
-  const handleInputBlur = () => {
+  const handleInputBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const newValue = event.target.value
+
+    if(newValue === '') {
+      setIsError(true)
+      return
+    }
+
     setIsEdit(false);
     setSelectedItemIndex(null);
   };
@@ -95,7 +108,7 @@ function App() {
         </header>
         {todoItems.length ? (
           <section>
-            <div className="wrapper__upcoming">
+            <form className="wrapper__upcoming">
               <span className="wrapper__upcoming__title">Upcoming</span>
               <ul className="wrapper__upcoming__items">
                 {todoItems
@@ -134,9 +147,10 @@ function App() {
                         />
                       )}
                     </li>
+                    
                   ))}
               </ul>
-            </div>
+            </form>
 
             <div className="wrapper__finished">
               <div className="wrapper__finished__top">
