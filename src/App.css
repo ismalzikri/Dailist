@@ -117,10 +117,18 @@
 
 .wrapper__finished__top__clear {
   font-size: 16px;
-  text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
   user-select: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #aa3939;
+  color: white !important;
+  transition: all 0.2s;
 }
 
+.wrapper__finished__top__clear:hover {
+  background:#ca2e2e;
+}
 /*  wrapper finished end */
